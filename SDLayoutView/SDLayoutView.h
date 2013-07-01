@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Sudeium. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SDView.h"
 
-@interface SDLayoutView : NSObject
+@interface SDLayoutView : SDView
+@property (nonatomic, assign) CGSize maximumSize;
+
+- (NSArray*) layoutCapableSubviews;
 
 @end

@@ -8,8 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		8B2F625D1781A323003B91E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2F625C1781A323003B91E4 /* Foundation.framework */; };
-		8B2F62621781A323003B91E4 /* SDLayoutView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8B2F62611781A323003B91E4 /* SDLayoutView.h */; };
-		8B2F62641781A323003B91E4 /* SDLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F62631781A323003B91E4 /* SDLayoutView.m */; };
+		8B2F62721781A33C003B91E4 /* SDHorizontalLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F626B1781A33C003B91E4 /* SDHorizontalLayoutView.m */; };
+		8B2F62731781A33C003B91E4 /* SDVerticalLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F626D1781A33C003B91E4 /* SDVerticalLayoutView.m */; };
+		8B2F62741781A33C003B91E4 /* SDGridLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F626F1781A33C003B91E4 /* SDGridLayoutView.m */; };
+		8B2F62751781A33C003B91E4 /* SDAnchorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F62711781A33C003B91E4 /* SDAnchorView.m */; };
+		8B2F62831781A375003B91E4 /* SDNibLoadedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F62781781A375003B91E4 /* SDNibLoadedButton.m */; };
+		8B2F62841781A375003B91E4 /* SDNibLoadedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F627A1781A375003B91E4 /* SDNibLoadedLabel.m */; };
+		8B2F62851781A375003B91E4 /* SDNibLoadedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F627C1781A375003B91E4 /* SDNibLoadedTableViewCell.m */; };
+		8B2F62861781A375003B91E4 /* SDNibLoadedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F627E1781A375003B91E4 /* SDNibLoadedTextField.m */; };
+		8B2F62871781A375003B91E4 /* SDNibLoadedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F62801781A375003B91E4 /* SDNibLoadedTextView.m */; };
+		8B2F62881781A375003B91E4 /* SDNibLoadedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F62821781A375003B91E4 /* SDNibLoadedView.m */; };
+		8B2F628B1781A3AE003B91E4 /* SDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2F628A1781A3AE003B91E4 /* SDView.m */; };
+		8BA1FAEC1781A70400DABC9D /* UIView+LoadFromNib.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA1FAEB1781A70400DABC9D /* UIView+LoadFromNib.m */; };
+		8BA1FAEF1781AA8900DABC9D /* SDLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA1FAEE1781AA8900DABC9D /* SDLayoutView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,7 +30,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				8B2F62621781A323003B91E4 /* SDLayoutView.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -29,8 +39,34 @@
 		8B2F62591781A323003B91E4 /* libSDLayoutView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSDLayoutView.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B2F625C1781A323003B91E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8B2F62601781A323003B91E4 /* SDLayoutView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDLayoutView-Prefix.pch"; sourceTree = "<group>"; };
-		8B2F62611781A323003B91E4 /* SDLayoutView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDLayoutView.h; sourceTree = "<group>"; };
-		8B2F62631781A323003B91E4 /* SDLayoutView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDLayoutView.m; sourceTree = "<group>"; };
+		8B2F626A1781A33C003B91E4 /* SDHorizontalLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDHorizontalLayoutView.h; sourceTree = "<group>"; };
+		8B2F626B1781A33C003B91E4 /* SDHorizontalLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDHorizontalLayoutView.m; sourceTree = "<group>"; };
+		8B2F626C1781A33C003B91E4 /* SDVerticalLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDVerticalLayoutView.h; sourceTree = "<group>"; };
+		8B2F626D1781A33C003B91E4 /* SDVerticalLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDVerticalLayoutView.m; sourceTree = "<group>"; };
+		8B2F626E1781A33C003B91E4 /* SDGridLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDGridLayoutView.h; sourceTree = "<group>"; };
+		8B2F626F1781A33C003B91E4 /* SDGridLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDGridLayoutView.m; sourceTree = "<group>"; };
+		8B2F62701781A33C003B91E4 /* SDAnchorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDAnchorView.h; sourceTree = "<group>"; };
+		8B2F62711781A33C003B91E4 /* SDAnchorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDAnchorView.m; sourceTree = "<group>"; };
+		8B2F62771781A375003B91E4 /* SDNibLoadedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNibLoadedButton.h; sourceTree = "<group>"; };
+		8B2F62781781A375003B91E4 /* SDNibLoadedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNibLoadedButton.m; sourceTree = "<group>"; };
+		8B2F62791781A375003B91E4 /* SDNibLoadedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNibLoadedLabel.h; sourceTree = "<group>"; };
+		8B2F627A1781A375003B91E4 /* SDNibLoadedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNibLoadedLabel.m; sourceTree = "<group>"; };
+		8B2F627B1781A375003B91E4 /* SDNibLoadedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNibLoadedTableViewCell.h; sourceTree = "<group>"; };
+		8B2F627C1781A375003B91E4 /* SDNibLoadedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNibLoadedTableViewCell.m; sourceTree = "<group>"; };
+		8B2F627D1781A375003B91E4 /* SDNibLoadedTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNibLoadedTextField.h; sourceTree = "<group>"; };
+		8B2F627E1781A375003B91E4 /* SDNibLoadedTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNibLoadedTextField.m; sourceTree = "<group>"; };
+		8B2F627F1781A375003B91E4 /* SDNibLoadedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNibLoadedTextView.h; sourceTree = "<group>"; };
+		8B2F62801781A375003B91E4 /* SDNibLoadedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNibLoadedTextView.m; sourceTree = "<group>"; };
+		8B2F62811781A375003B91E4 /* SDNibLoadedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDNibLoadedView.h; sourceTree = "<group>"; };
+		8B2F62821781A375003B91E4 /* SDNibLoadedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDNibLoadedView.m; sourceTree = "<group>"; };
+		8B2F62891781A3AE003B91E4 /* SDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDView.h; sourceTree = "<group>"; };
+		8B2F628A1781A3AE003B91E4 /* SDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDView.m; sourceTree = "<group>"; };
+		8B2F628C1781A3D2003B91E4 /* UIViewDesiredHeight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewDesiredHeight.h; sourceTree = "<group>"; };
+		8B2F628D1781A3D2003B91E4 /* UIViewDesiredWidth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewDesiredWidth.h; sourceTree = "<group>"; };
+		8BA1FAEA1781A70400DABC9D /* UIView+LoadFromNib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LoadFromNib.h"; sourceTree = "<group>"; };
+		8BA1FAEB1781A70400DABC9D /* UIView+LoadFromNib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LoadFromNib.m"; sourceTree = "<group>"; };
+		8BA1FAED1781AA8800DABC9D /* SDLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDLayoutView.h; sourceTree = "<group>"; };
+		8BA1FAEE1781AA8900DABC9D /* SDLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDLayoutView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +109,21 @@
 		8B2F625E1781A323003B91E4 /* SDLayoutView */ = {
 			isa = PBXGroup;
 			children = (
-				8B2F62611781A323003B91E4 /* SDLayoutView.h */,
-				8B2F62631781A323003B91E4 /* SDLayoutView.m */,
+				8B2F62761781A375003B91E4 /* NibLoaded */,
+				8BA1FAED1781AA8800DABC9D /* SDLayoutView.h */,
+				8BA1FAEE1781AA8900DABC9D /* SDLayoutView.m */,
+				8B2F626A1781A33C003B91E4 /* SDHorizontalLayoutView.h */,
+				8B2F626B1781A33C003B91E4 /* SDHorizontalLayoutView.m */,
+				8B2F626C1781A33C003B91E4 /* SDVerticalLayoutView.h */,
+				8B2F626D1781A33C003B91E4 /* SDVerticalLayoutView.m */,
+				8B2F626E1781A33C003B91E4 /* SDGridLayoutView.h */,
+				8B2F626F1781A33C003B91E4 /* SDGridLayoutView.m */,
+				8B2F62701781A33C003B91E4 /* SDAnchorView.h */,
+				8B2F62711781A33C003B91E4 /* SDAnchorView.m */,
+				8B2F62891781A3AE003B91E4 /* SDView.h */,
+				8B2F628A1781A3AE003B91E4 /* SDView.m */,
+				8B2F628C1781A3D2003B91E4 /* UIViewDesiredHeight.h */,
+				8B2F628D1781A3D2003B91E4 /* UIViewDesiredWidth.h */,
 				8B2F625F1781A323003B91E4 /* Supporting Files */,
 			);
 			path = SDLayoutView;
@@ -86,6 +135,27 @@
 				8B2F62601781A323003B91E4 /* SDLayoutView-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B2F62761781A375003B91E4 /* NibLoaded */ = {
+			isa = PBXGroup;
+			children = (
+				8B2F62771781A375003B91E4 /* SDNibLoadedButton.h */,
+				8B2F62781781A375003B91E4 /* SDNibLoadedButton.m */,
+				8B2F62791781A375003B91E4 /* SDNibLoadedLabel.h */,
+				8B2F627A1781A375003B91E4 /* SDNibLoadedLabel.m */,
+				8B2F627B1781A375003B91E4 /* SDNibLoadedTableViewCell.h */,
+				8B2F627C1781A375003B91E4 /* SDNibLoadedTableViewCell.m */,
+				8B2F627D1781A375003B91E4 /* SDNibLoadedTextField.h */,
+				8B2F627E1781A375003B91E4 /* SDNibLoadedTextField.m */,
+				8B2F627F1781A375003B91E4 /* SDNibLoadedTextView.h */,
+				8B2F62801781A375003B91E4 /* SDNibLoadedTextView.m */,
+				8B2F62811781A375003B91E4 /* SDNibLoadedView.h */,
+				8B2F62821781A375003B91E4 /* SDNibLoadedView.m */,
+				8BA1FAEA1781A70400DABC9D /* UIView+LoadFromNib.h */,
+				8BA1FAEB1781A70400DABC9D /* UIView+LoadFromNib.m */,
+			);
+			path = NibLoaded;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +209,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B2F62641781A323003B91E4 /* SDLayoutView.m in Sources */,
+				8B2F62721781A33C003B91E4 /* SDHorizontalLayoutView.m in Sources */,
+				8B2F62731781A33C003B91E4 /* SDVerticalLayoutView.m in Sources */,
+				8B2F62741781A33C003B91E4 /* SDGridLayoutView.m in Sources */,
+				8B2F62751781A33C003B91E4 /* SDAnchorView.m in Sources */,
+				8B2F62831781A375003B91E4 /* SDNibLoadedButton.m in Sources */,
+				8B2F62841781A375003B91E4 /* SDNibLoadedLabel.m in Sources */,
+				8B2F62851781A375003B91E4 /* SDNibLoadedTableViewCell.m in Sources */,
+				8B2F62861781A375003B91E4 /* SDNibLoadedTextField.m in Sources */,
+				8B2F62871781A375003B91E4 /* SDNibLoadedTextView.m in Sources */,
+				8B2F62881781A375003B91E4 /* SDNibLoadedView.m in Sources */,
+				8B2F628B1781A3AE003B91E4 /* SDView.m in Sources */,
+				8BA1FAEC1781A70400DABC9D /* UIView+LoadFromNib.m in Sources */,
+				8BA1FAEF1781AA8900DABC9D /* SDLayoutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +324,7 @@
 				8B2F62691781A323003B91E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
