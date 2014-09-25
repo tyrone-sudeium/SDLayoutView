@@ -10,8 +10,10 @@
 
 @implementation SDLayoutView {
     BOOL _maximumSizeSet;
+    BOOL _minimumSizeSet;
 }
 @synthesize maximumSize=_maximumSize;
+@synthesize minimumSize=_minimumSize;
 
 - (void) setMaximumSize:(CGSize)maximumSize
 {
@@ -25,6 +27,21 @@
         return CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX);
     } else {
         return _maximumSize;
+    }
+}
+
+- (void) setMinimumSize:(CGSize)minimumSize
+{
+    _minimumSize = minimumSize;
+    _minimumSizeSet = YES;
+}
+
+- (CGSize) minimumSize
+{
+    if (!_minimumSizeSet) {
+        return CGSizeMake(0,0);
+    } else {
+        return _minimumSize;
     }
 }
 
