@@ -14,10 +14,10 @@
 @property (nonatomic, readonly, assign) NSInteger numberOfLinesFromNib;
 @property (nonatomic, readonly, assign) BOOL enabledFromNib;
 @property (nonatomic, readonly, assign) UIBaselineAdjustment baselineAdjustmentFromNib;
-@property (nonatomic, readonly, assign) UILineBreakMode lineBreakModeFromNib;
-@property (nonatomic, readonly, assign) UITextAlignment textAlignmentFromNib;
+@property (nonatomic, readonly, assign) NSLineBreakMode lineBreakModeFromNib;
+@property (nonatomic, readonly, assign) NSTextAlignment textAlignmentFromNib;
 @property (nonatomic, readonly, retain) UIFont *fontFromNib;
-@property (nonatomic, readonly, assign) CGFloat minimumFontSizeFromNib;
+@property (nonatomic, readonly, assign) CGFloat minimumScaleFactorFromNib;
 @property (nonatomic, readonly, assign) BOOL adjustsFontSizeToFitWidthFromNib;
 @property (nonatomic, readonly, retain) UIColor *textColorFromNib;
 @property (nonatomic, readonly, retain) UIColor *highlightedTextColorFromNib;
@@ -30,10 +30,10 @@
 @property (nonatomic, readwrite, assign) NSInteger numberOfLinesFromNib;
 @property (nonatomic, readwrite, assign) BOOL enabledFromNib;
 @property (nonatomic, readwrite, assign) UIBaselineAdjustment baselineAdjustmentFromNib;
-@property (nonatomic, readwrite, assign) UILineBreakMode lineBreakModeFromNib;
-@property (nonatomic, readwrite, assign) UITextAlignment textAlignmentFromNib;
+@property (nonatomic, readwrite, assign) NSLineBreakMode lineBreakModeFromNib;
+@property (nonatomic, readwrite, assign) NSTextAlignment textAlignmentFromNib;
 @property (nonatomic, readwrite, retain) UIFont *fontFromNib;
-@property (nonatomic, readwrite, assign) CGFloat minimumFontSizeFromNib;
+@property (nonatomic, readwrite, assign) CGFloat minimumScaleFactorFromNib;
 @property (nonatomic, readwrite, assign) BOOL adjustsFontSizeToFitWidthFromNib;
 @property (nonatomic, readwrite, retain) UIColor *textColorFromNib;
 @property (nonatomic, readwrite, retain) UIColor *highlightedTextColorFromNib;
@@ -43,7 +43,7 @@
 
 #define SYNTHESIZE_NIBLOADEDLABEL_PROPERTIES \
 @synthesize textFromNib, numberOfLinesFromNib, enabledFromNib, baselineAdjustmentFromNib;\
-@synthesize lineBreakModeFromNib, textAlignmentFromNib, fontFromNib, minimumFontSizeFromNib;\
+@synthesize lineBreakModeFromNib, textAlignmentFromNib, fontFromNib, minimumScaleFactorFromNib;\
 @synthesize adjustsFontSizeToFitWidthFromNib, textColorFromNib, highlightedTextColorFromNib;\
 @synthesize shadowColorFromNib, shadowOffsetFromNib
 

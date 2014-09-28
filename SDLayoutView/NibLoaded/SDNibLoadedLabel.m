@@ -32,7 +32,7 @@ SYNTHESIZE_NIBLOADEDLABEL_PROPERTIES;
     label.lineBreakModeFromNib = label.lineBreakMode;
     label.textAlignmentFromNib = label.textAlignment;
     label.fontFromNib = label.font;
-    label.minimumFontSizeFromNib = label.minimumFontSize;
+    label.minimumScaleFactorFromNib = label.minimumScaleFactor;
     label.adjustsFontSizeToFitWidthFromNib = label.adjustsFontSizeToFitWidth;
     label.textColorFromNib = label.textColor;
     label.highlightedTextColorFromNib = label.highlightedTextColor;
