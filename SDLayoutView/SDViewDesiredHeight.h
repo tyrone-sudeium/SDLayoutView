@@ -1,5 +1,5 @@
 //
-//  UIViewDesiredHeight.h
+//  SDViewDesiredHeight.h
 //  SDLayoutView
 //
 //  Created by Tyrone Trevorrow on 9/03/12.
@@ -12,8 +12,9 @@
 // Similar in concept to UIKit's built in "sizeToFit", except
 // it doesn't actually do the resizing, just returns how large
 // it would like to be.  i.e It doesn't suck.
-@protocol UIViewDesiredHeight <NSObject>
+@protocol SDViewDesiredHeight <NSObject>
 @required
 - (NSNumber*) desiredHeight;
-
+@property (nonatomic, copy) IBInspectable NSNumber* maximumHeight;
+@property (nonatomic, copy) IBInspectable NSNumber* minimumHeight;
 @end

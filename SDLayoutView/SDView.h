@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SDNibLoadedView.h"
-#import "UIViewDesiredHeight.h"
-#import "UIViewDesiredWidth.h"
+#import "SDViewDesiredHeight.h"
+#import "SDViewDesiredWidth.h"
 #import "UIView+LoadFromNib.h"
 
 @interface UIView (SDView)
@@ -23,6 +23,13 @@
 - (void) fadeOutOver: (NSTimeInterval) timeInterval;
 @end
 
-@interface SDView : SDNibLoadedView <UIViewDesiredHeight, UIViewDesiredWidth>
+IB_DESIGNABLE @interface SDView : SDNibLoadedView <SDViewDesiredHeight, SDViewDesiredWidth>
+@property (nonatomic, copy) IBInspectable NSNumber* maximumWidth;
+@property (nonatomic, copy) IBInspectable NSNumber* minimumWidth;
+@property (nonatomic, copy) IBInspectable NSNumber* maximumHeight;
+@property (nonatomic, copy) IBInspectable NSNumber* minimumHeight;
++ (CGSize) desiredSizeForLayoutCapableView: (UIView<SDViewDesiredHeight,SDViewDesiredWidth>*) view;
++ (CGFloat) desiredHeightForLayoutCapableView: (UIView<SDViewDesiredHeight>*) view;
++ (CGFloat) desiredWidthForLayoutCapableView: (UIView<SDViewDesiredWidth>*) view;
 
 @end

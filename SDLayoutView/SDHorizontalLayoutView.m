@@ -15,14 +15,13 @@
     [super layoutSubviews];
     NSArray *subviewsToLayout = [self layoutCapableSubviews];
     UIView *lastSubview = nil;
-    CGFloat maxWidth = self.maximumSize.width == 0 ? CGFLOAT_MAX : self.maximumSize.width;
-    for (UIView<UIViewDesiredWidth> *subview in subviewsToLayout) {
-        CGFloat subviewWidth = [[subview desiredWidth] floatValue];
+    for (UIView<SDViewDesiredWidth> *subview in subviewsToLayout) {
+        CGFloat subviewWidth = [[self class] desiredWidthForLayoutCapableView: subview];
         CGRect subviewFrame = subview.frame;
         subviewFrame.size.width = subviewWidth;
         subviewFrame.origin.x = lastSubview.frame.origin.x + lastSubview.frame.size.width;
-        if (subview.frame.origin.x + subview.frame.size.width > maxWidth) {
-            subviewFrame.size.width = maxWidth - subview.frame.origin.x;
+        if (self.maximumWidth && subview.frame.origin.x + subview.frame.size.width > self.maximumWidth.floatValue) {
+            subviewFrame.size.width = self.maximumWidth.floatValue - subview.frame.origin.x;
         }
         subview.frame = subviewFrame;
         lastSubview = subview;
@@ -34,16 +33,18 @@
     NSArray *subviewsToLayout = [self layoutCapableSubviews];
     CGFloat runningTotal = 0.0f;
     BOOL first = YES;
-    for (UIView<UIViewDesiredWidth> *subview in subviewsToLayout) {
+    for (UIView<SDViewDesiredWidth> *subview in subviewsToLayout) {
         if (first) {
             first = NO;
             runningTotal += subview.frame.origin.x;
         }
-        CGFloat subviewWidth = [[subview desiredWidth] floatValue];
+        CGFloat subviewWidth = [[self class] desiredWidthForLayoutCapableView: subview];
         runningTotal += subviewWidth;
     }
-    CGFloat maxWidth = self.maximumSize.width == 0 ? CGFLOAT_MAX : self.maximumSize.width;
-    return @(MIN(runningTotal, maxWidth));
+    if (self.maximumWidth && runningTotal > self.maximumWidth.floatValue) {
+        runningTotal = self.maximumWidth.floatValue;
+    }
+    return @(runningTotal);
 }
 
 @end

@@ -15,14 +15,13 @@
     [super layoutSubviews];
     NSArray *subviewsToLayout = [self layoutCapableSubviews];
     UIView *lastSubview = nil;
-    CGFloat maxHeight = self.maximumSize.height == 0 ? CGFLOAT_MAX : self.maximumSize.height;
-    for (UIView<UIViewDesiredHeight> *subview in subviewsToLayout) {
-        CGFloat subviewHeight = [[subview desiredHeight] floatValue];
+    for (UIView<SDViewDesiredHeight> *subview in subviewsToLayout) {
+        CGFloat subviewHeight = [[self class] desiredHeightForLayoutCapableView: subview];
         CGRect subviewFrame = subview.frame;
         subviewFrame.size.height = subviewHeight;
         subviewFrame.origin.y = lastSubview.frame.origin.y + lastSubview.frame.size.height;
-        if (subview.frame.origin.y + subview.frame.size.height > maxHeight) {
-            subviewFrame.size.height = maxHeight - subview.frame.origin.y;
+        if (self.maximumHeight && subview.frame.origin.y + subview.frame.size.height > self.maximumHeight.floatValue) {
+            subviewFrame.size.height = self.maximumHeight.floatValue - subview.frame.origin.y;
         }
         subview.frame = subviewFrame;
         lastSubview = subview;
@@ -34,16 +33,18 @@
     NSArray *subviewsToLayout = [self layoutCapableSubviews];
     CGFloat runningTotal = 0.0f;
     BOOL first = YES;
-    for (UIView<UIViewDesiredHeight> *subview in subviewsToLayout) {
+    for (UIView<SDViewDesiredHeight> *subview in subviewsToLayout) {
         if (first) {
             first = NO;
             runningTotal += subview.frame.origin.y;
         }
-        CGFloat subviewHeight = [[subview desiredHeight] floatValue];
+        CGFloat subviewHeight = [[self class] desiredHeightForLayoutCapableView: subview];
         runningTotal += subviewHeight;
     }
-    CGFloat maxHeight = self.maximumSize.height == 0 ? CGFLOAT_MAX : self.maximumSize.height;
-    return @(MIN(runningTotal, maxHeight));
+    if (self.maximumHeight && runningTotal > self.maximumHeight.floatValue) {
+        runningTotal = self.maximumHeight.floatValue;
+    }
+    return @(runningTotal);
 }
 
 @end

@@ -16,7 +16,7 @@
 - (NSArray*) layoutCapableSubviews
 {
     NSArray *subviewsToLayout = [self.subviews filteredArrayUsingPredicate: [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        if ([evaluatedObject conformsToProtocol: @protocol(UIViewDesiredHeight)] && [evaluatedObject conformsToProtocol: @protocol(UIViewDesiredWidth)]) {
+        if ([evaluatedObject conformsToProtocol: @protocol(SDViewDesiredHeight)] && [evaluatedObject conformsToProtocol: @protocol(SDViewDesiredWidth)]) {
             return YES;
         } else {
             return NO;
@@ -51,7 +51,7 @@
     CGFloat rowHeight = 0.0f;
     CGFloat currentY = 0.0f;
     CGFloat currentX = 0.0f;
-    for (UIView<UIViewDesiredHeight,UIViewDesiredWidth> *subview in subviewsToLayout) {
+    for (UIView<SDViewDesiredHeight,SDViewDesiredWidth> *subview in subviewsToLayout) {
         CGFloat itemWidth = [[subview desiredWidth] floatValue];
         CGFloat itemHeight = [[subview desiredHeight] floatValue];
         rowHeight = MAX(rowHeight, itemHeight);

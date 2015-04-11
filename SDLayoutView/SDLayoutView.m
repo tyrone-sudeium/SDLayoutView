@@ -8,48 +8,13 @@
 
 #import "SDLayoutView.h"
 
-@implementation SDLayoutView {
-    BOOL _maximumSizeSet;
-    BOOL _minimumSizeSet;
-}
-@synthesize maximumSize=_maximumSize;
-@synthesize minimumSize=_minimumSize;
-
-- (void) setMaximumSize:(CGSize)maximumSize
-{
-    _maximumSize = maximumSize;
-    _maximumSizeSet = YES;
-}
-
-- (CGSize) maximumSize
-{
-    if (!_maximumSizeSet) {
-        return CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX);
-    } else {
-        return _maximumSize;
-    }
-}
-
-- (void) setMinimumSize:(CGSize)minimumSize
-{
-    _minimumSize = minimumSize;
-    _minimumSizeSet = YES;
-}
-
-- (CGSize) minimumSize
-{
-    if (!_minimumSizeSet) {
-        return CGSizeMake(0,0);
-    } else {
-        return _minimumSize;
-    }
-}
+@implementation SDLayoutView
 
 - (NSArray*) layoutCapableSubviews
 {
     NSArray *subviewsToLayout = [self.subviews filteredArrayUsingPredicate: [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        if ([evaluatedObject conformsToProtocol: @protocol(UIViewDesiredHeight)] ||
-            [evaluatedObject conformsToProtocol: @protocol(UIViewDesiredWidth)])
+        if ([evaluatedObject conformsToProtocol: @protocol(SDViewDesiredHeight)] ||
+            [evaluatedObject conformsToProtocol: @protocol(SDViewDesiredWidth)])
         {
             return YES;
         } else {
@@ -62,8 +27,7 @@
 - (void) sizeToFit
 {
     [super sizeToFit];
-    CGSize s = CGSizeMake(MIN(self.maximumSize.width, self.desiredWidth.floatValue),
-                          MIN(self.maximumSize.height, self.desiredHeight.floatValue));
+    CGSize s = [SDView desiredSizeForLayoutCapableView: self];
     CGRect f = self.frame;
     f.size = s;
     self.frame = f;

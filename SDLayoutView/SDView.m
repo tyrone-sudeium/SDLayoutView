@@ -9,10 +9,10 @@
 #import "SDView.h"
 #import <objc/runtime.h>
 
-@interface __WeakWrapper : NSObject
+@interface __SDWeakWrapper : NSObject
 @end
 
-@implementation __WeakWrapper {
+@implementation __SDWeakWrapper {
     @public
     __weak id _obj;
 }
@@ -101,12 +101,12 @@
 
 - (void) setRelatedObject:(id)relatedObject
 {
-    objc_setAssociatedObject(self, "SDView::relatedObject", [[__WeakWrapper alloc] initWithObj: relatedObject], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, "SDView::relatedObject", [[__SDWeakWrapper alloc] initWithObj: relatedObject], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (id) relatedObject
 {
-    __WeakWrapper *obj = objc_getAssociatedObject(self, "SDView::relatedObject");
+    __SDWeakWrapper *obj = objc_getAssociatedObject(self, "SDView::relatedObject");
     return obj->_obj;
 }
 
@@ -139,6 +139,56 @@
 {
     // The default implementation is to just return the frame width.
     return @(self.frame.size.width);
+}
+
+- (NSNumber*) maximumHeight
+{
+    return @(HUGE_VALF);
+}
+
+- (NSNumber*) minimumHeight
+{
+    return @0;
+}
+
+- (NSNumber*) maximumWidth
+{
+    return @(HUGE_VALF);
+}
+
+- (NSNumber*) minimumWidth
+{
+    return @0;
+}
+
++ (CGSize) desiredSizeForLayoutCapableView:(UIView<SDViewDesiredHeight,SDViewDesiredWidth> *)view
+{
+    CGSize s = CGSizeMake([self desiredWidthForLayoutCapableView: view], [self desiredHeightForLayoutCapableView: view]);
+    return s;
+}
+
++ (CGFloat) desiredHeightForLayoutCapableView: (UIView<SDViewDesiredHeight>*) view
+{
+    CGFloat desiredHeight = view.desiredHeight.floatValue;
+    if (view.maximumHeight) {
+        desiredHeight = MIN(view.maximumHeight.floatValue, desiredHeight);
+    }
+    if (view.minimumHeight) {
+        desiredHeight = MAX(view.minimumHeight.floatValue, desiredHeight);
+    }
+    return desiredHeight;
+}
+
++ (CGFloat) desiredWidthForLayoutCapableView: (UIView<SDViewDesiredWidth>*) view
+{
+    CGFloat desiredWidth = view.desiredWidth.floatValue;
+    if (view.maximumWidth) {
+        desiredWidth = MIN(view.maximumWidth.floatValue, desiredWidth);
+    }
+    if (view.minimumWidth) {
+        desiredWidth = MAX(view.minimumWidth.floatValue, desiredWidth);
+    }
+    return desiredWidth;
 }
 
 @end

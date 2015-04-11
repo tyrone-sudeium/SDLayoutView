@@ -9,8 +9,6 @@
 #import "SDView.h"
 
 @interface SDLayoutView : SDView
-@property (nonatomic, assign) CGSize maximumSize;
-@property (nonatomic, assign) CGSize minimumSize;
 
 - (NSArray*) layoutCapableSubviews;
 
